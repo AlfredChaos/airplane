@@ -18,11 +18,9 @@ export class SelfPlane extends Component {
 
         const delta = event.getDelta();
         let pos = this.node.position;
-        
+
         var x = pos.x + 0.1 * this.speed * delta.x;
         var z = pos.z - 0.1 * this.speed * delta.y
-        console.log("current location x = ", pos.x)
-        console.log("current location z = ", pos.z)
         if (x < minxX) {
             x = minxX;
         } else if (x > maxX) {
