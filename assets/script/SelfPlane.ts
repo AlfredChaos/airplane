@@ -11,9 +11,29 @@ export class SelfPlane extends Component {
     }
 
     _touchMove(event: EventTouch) {
+        const minxX = -23;
+        const maxX = 23;
+        const minZ = -39;
+        const maxZ = 40;
+
         const delta = event.getDelta();
         let pos = this.node.position;
-        this.node.setPosition(pos.x + 0.1 * this.speed * delta.x, pos.y, pos.z - 0.1 * this.speed * delta.y);
+        
+        var x = pos.x + 0.1 * this.speed * delta.x;
+        var z = pos.z - 0.1 * this.speed * delta.y
+        console.log("current location x = ", pos.x)
+        console.log("current location z = ", pos.z)
+        if (x < minxX) {
+            x = minxX;
+        } else if (x > maxX) {
+            x = maxX;
+        }
+        if (z < minZ) {
+            z = minZ;
+        } else if (z > maxZ) {
+            z = maxZ;
+        }
+        this.node.setPosition(x, pos.y, z);
 
     }
 
