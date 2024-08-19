@@ -43,7 +43,7 @@ export class GameManager extends Component {
     private _currShootTime = 0;
     private _isShooting = false;
     private _currCreateEnemyTime = 0;
-    private _combinationInterval = 0;
+    private _combinationInterval = Constant.Combination.PLAN1;
 
     start() {
         this._init();
@@ -70,7 +70,7 @@ export class GameManager extends Component {
     }
 
     public createEnemyPlane() {
-        const whichEnemy = math.randomRangeInt(1,3);
+        const whichEnemy = math.randomRangeInt(1, 3);
         let prefab: Prefab = null;
         let speed = 0;
         if (whichEnemy === Constant.PlaneType.TYPE1) {
@@ -85,6 +85,9 @@ export class GameManager extends Component {
         enemy.setParent(this.node);
         const enemyComp = enemy.getComponent(enemyPlane);
         enemyComp.set_speed(speed);
+
+        const randomPos = math.randomRangeInt(-25, 26);
+        enemy.setPosition(randomPos, 0, -50);
     }
 
     public createPlayerBullet() {
@@ -106,7 +109,7 @@ export class GameManager extends Component {
     }
 
     private changePlaneMode() {
-        this.schedule(this._combinationInterval, 10, 3);
+        this.schedule(this._modeChanged, 10, 3);
     }
 
     private _modeChanged() {
