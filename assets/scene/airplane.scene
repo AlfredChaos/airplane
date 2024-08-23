@@ -794,7 +794,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 360,
+    "_orthoHeight": 451.38686131386856,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -951,6 +951,17 @@
     "bulletRoot": {
       "__id__": 39
     },
+    "enemy01": {
+      "__uuid__": "cd5d0390-4b74-4d2d-92c4-2587463c9419",
+      "__expectedType__": "cc.Prefab"
+    },
+    "enemy02": {
+      "__uuid__": "7337bc43-64e7-4ef5-8374-6ff3ef734f72",
+      "__expectedType__": "cc.Prefab"
+    },
+    "createEnemyTime": 1,
+    "enemy1Speed": 0.5,
+    "enemy2Speed": 0.7,
     "_id": "29WXwaDstLarhuzhJaEwk7"
   },
   {
